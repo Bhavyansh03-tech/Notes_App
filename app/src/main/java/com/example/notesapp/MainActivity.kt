@@ -19,7 +19,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             NotesAppTheme {
-
+                // We will initialize splash screen while making onboarding screen.
             }
         }
     }
