@@ -1,6 +1,10 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.daggerHilt)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -67,9 +71,19 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    // Dagger Hilt
+    implementation(libs.dagger.hilt)
+    ksp(libs.dagger.hilt.compiler)
+    ksp(libs.dagger.hilt.androidx)
+    ksp(libs.hilt.android.compiler)
+    implementation(libs.dagger.hilt.navigation.compose)
+
     // Navigation Compose
     implementation(libs.androidx.navigation.compose)
     implementation(libs.kotlinx.serialization.json)
+
+    // Preference Datastore
+    implementation(libs.androidx.datastore.preferences)
 
     // Google Fonts
     implementation(libs.androidx.ui.text.google.fonts)
@@ -79,4 +93,10 @@ dependencies {
 
     // Splash Screen
     implementation(libs.androidx.core.splashscreen)
+}
+
+kotlin {
+    sourceSets.main {
+        kotlin.srcDirs += file("build/generated/ksp/main/kotlin")
+    }
 }
