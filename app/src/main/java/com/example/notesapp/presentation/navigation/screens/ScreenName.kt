@@ -7,5 +7,6 @@ sealed class ScreenName {
     @Serializable data object HomeNavigator : ScreenName()
 }
 
-@Serializable object HomeScreen
-@Serializable object OnboardingScreen
+@Serializable object Home
+@Serializable object AddNote
+@Serializable object Onboarding

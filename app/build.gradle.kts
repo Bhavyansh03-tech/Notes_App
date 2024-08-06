@@ -78,6 +78,10 @@ dependencies {
     ksp(libs.hilt.android.compiler)
     implementation(libs.dagger.hilt.navigation.compose)
 
+    // Room Database
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
+
     // Navigation Compose
     implementation(libs.androidx.navigation.compose)
     implementation(libs.kotlinx.serialization.json)

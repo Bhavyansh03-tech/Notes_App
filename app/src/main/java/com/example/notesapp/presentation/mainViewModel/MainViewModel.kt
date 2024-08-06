@@ -1,4 +1,4 @@
-package com.example.notesapp.presentation.viewModel
+package com.example.notesapp.presentation.mainViewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class StartingViewModel @Inject constructor(
+class MainViewModel @Inject constructor(
     private val appEntryUseCases: AppEntryUseCases
 ) : ViewModel() {
 

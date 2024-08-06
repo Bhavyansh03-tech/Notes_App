@@ -1,27 +1,28 @@
 package com.example.notesapp.presentation.navigation
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
-import com.example.notesapp.presentation.navigation.screens.HomeScreen
-import com.example.notesapp.presentation.navigation.screens.OnboardingScreen
+import com.example.notesapp.presentation.navigation.screens.AddNote
+import com.example.notesapp.presentation.navigation.screens.Home
+import com.example.notesapp.presentation.navigation.screens.Onboarding
 import com.example.notesapp.presentation.navigation.screens.ScreenName
+import com.example.notesapp.presentation.notes.NotesState
+import com.example.notesapp.presentation.notes.screen.AddNoteScreen
+import com.example.notesapp.presentation.notes.screen.NotesScreen
+import com.example.notesapp.presentation.notes.viewModel.NotesEvent
 import com.example.notesapp.presentation.onboarding.OnBoardingScreen
 import com.example.notesapp.presentation.onboarding.viewModel.OnboardingViewModel
 
 @Composable
 fun NavGraph(
     navController: NavHostController,
-    startDestination: ScreenName
+    startDestination: ScreenName,
+    state: NotesState,
+    onEvent: (NotesEvent) -> Unit
 ) {
 
     NavHost(
@@ -29,9 +30,9 @@ fun NavGraph(
         startDestination = startDestination
     ) {
         navigation<ScreenName.AppStartNavigation>(
-            startDestination = OnboardingScreen
+            startDestination = Onboarding
         ){
-            composable<OnboardingScreen>{
+            composable<Onboarding>{
                 // Initializing the view model :->
                 val viewModel = hiltViewModel<OnboardingViewModel>()
 
@@ -43,19 +44,22 @@ fun NavGraph(
         }
 
         navigation<ScreenName.HomeNavigator>(
-            startDestination = HomeScreen
+            startDestination = Home
         ){
-            composable<HomeScreen>{
-                Box(
-                    modifier = Modifier.fillMaxSize(),
-                    contentAlignment = Alignment.Center
-                ){
-                    Text(
-                        text = "Home Screen",
-                        color = MaterialTheme.colorScheme.primary,
-                        style = MaterialTheme.typography.headlineLarge
-                    )
-                }
+            composable<Home>{
+                NotesScreen(
+                    state = state,
+                    onEvent = onEvent,
+                    navController = navController
+                )
+            }
+
+            composable<AddNote>{
+                AddNoteScreen(
+                    state = state,
+                    onEvent = onEvent,
+                    navController = navController
+                )
             }
         }
     }
