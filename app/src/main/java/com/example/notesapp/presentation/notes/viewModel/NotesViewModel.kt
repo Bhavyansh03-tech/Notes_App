@@ -55,7 +55,7 @@ class NotesViewModel(
                 val note = NotesClass(
                     title = state.value.title.value,
                     description = state.value.description.value,
-                    dateAdded = formattedDate.toLong()
+                    dateAdded = formattedDate
                 )
                 viewModelScope.launch {
                     notesDao.upsertNote(note)

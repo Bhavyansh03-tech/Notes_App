@@ -52,7 +52,8 @@ fun AddNoteScreen(
         topBar = {
             AddNoteTopBar(
                 modifier = Modifier.fillMaxWidth(),
-                scrollBehavior = scrollBehavior
+                scrollBehavior = scrollBehavior,
+                navController = navController
             )
         }
     ) { innerPadding ->

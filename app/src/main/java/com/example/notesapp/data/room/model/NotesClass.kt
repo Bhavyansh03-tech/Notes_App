@@ -10,6 +10,6 @@ data class NotesClass(
     val id: Int = 0,
     val title: String,
     val description: String,
-    val dateAdded: Long
+    val dateAdded: String
 
 )

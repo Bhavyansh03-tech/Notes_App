@@ -10,9 +10,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.TopAppBarDefaults
-import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -21,6 +18,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.compose.rememberNavController
 import androidx.room.Room
+import com.example.notesapp.data.room.database.MIGRATION_1_2
 import com.example.notesapp.data.room.database.NotesDatabase
 import com.example.notesapp.presentation.navigation.NavGraph
 import com.example.notesapp.presentation.mainViewModel.MainViewModel
@@ -40,7 +38,7 @@ class MainActivity : ComponentActivity() {
             applicationContext,
             NotesDatabase::class.java,
             "notes.db"
-        ).build()
+        ).addMigrations(MIGRATION_1_2).build()
     }
     private val notesViewModel by viewModels<NotesViewModel> (
         factoryProducer = {
