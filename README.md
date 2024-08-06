@@ -22,16 +22,21 @@ A powerful notes application built with Jetpack Compose, featuring a splash scre
 - **Kotlin:** The primary programming language.
 
 ## Screenshots
+
 ### Light Mode 
 <div style="display: flex; justify-content: center; align-items: center;">
-    <img src="https://github.com/user-attachments/assets/f16a180a-2b9b-4c75-8913-7de66c2e469e" alt="First Screenshot" style="width: 200px; height: auto; margin-right: 10px;">
-    <img src="https://github.com/user-attachments/assets/77c29526-e106-4104-a1f8-b84c888c69cb" alt="Second Screenshot" style="width: 200px; height: auto;">
+    <img src="https://github.com/user-attachments/assets/1da83b57-40e2-4064-99ef-f5736d25c4cb" alt="First Screenshot" style="width: 200px; height: auto; margin-right: 10px;">
+    <img src="https://github.com/user-attachments/assets/dd3ab49f-e232-4400-893d-78844289cf5b" alt="Second Screenshot" style="width: 200px; height: auto; margin-right: 10px;">
+    <img src="https://github.com/user-attachments/assets/61627e22-6f6f-464f-860c-3f2efa2467b4" alt="Third Screenshot" style="width: 200px; height: auto; margin-right: 10px;">
+    <img src="https://github.com/user-attachments/assets/65088c79-0fa1-4a00-a785-4da9fe872385" alt="Fourth Screenshot" style="width: 200px; height: auto;">
 </div>
 
 ### Dark Mode
 <div style="display: flex; justify-content: center; align-items: center;">
-    <img src="https://github.com/user-attachments/assets/f16a180a-2b9b-4c75-8913-7de66c2e469e" alt="First Screenshot" style="width: 200px; height: auto; margin-right: 10px;">
-    <img src="https://github.com/user-attachments/assets/77c29526-e106-4104-a1f8-b84c888c69cb" alt="Second Screenshot" style="width: 200px; height: auto;">
+    <img src="https://github.com/user-attachments/assets/66913377-5069-4ffc-92e3-12e8c6c63d1a" alt="First Screenshot" style="width: 200px; height: auto; margin-right: 10px;">
+    <img src="https://github.com/user-attachments/assets/b63dd5b0-5058-443d-8255-13a5a1d0df79" alt="Second Screenshot" style="width: 200px; height: auto; margin-right: 10px;">
+    <img src="https://github.com/user-attachments/assets/f161aa05-e7c0-4d3a-9e68-ff27f58d3fc6" alt="Third Screenshot" style="width: 200px; height: auto; margin-right: 10px;">
+    <img src="https://github.com/user-attachments/assets/b67497ce-6313-4348-b27f-07343d19cb22" alt="Fourth Screenshot" style="width: 200px; height: auto;">
 </div>
 
 ## Getting Started
