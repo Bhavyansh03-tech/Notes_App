@@ -2,10 +2,12 @@ package com.example.notesapp.presentation.notes.screen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Add
@@ -17,7 +19,10 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
@@ -53,25 +58,43 @@ fun NotesScreen(
 
         floatingActionButton = {
             FloatingActionButton(
-                modifier = Modifier.background(MaterialTheme.colorScheme.background),
-                onClick = { navController.navigate(AddNote) }
+                onClick = { navController.navigate(AddNote) },
+                containerColor = MaterialTheme.colorScheme.tertiaryContainer,
+                contentColor = MaterialTheme.colorScheme.onTertiaryContainer
             ) {
                 Icon(
                     imageVector = Icons.Rounded.Add,
-                    contentDescription = "Add Notes",
-                    tint = MaterialTheme.colorScheme.onBackground
+                    contentDescription = "Add Notes"
                 )
             }
         }
     ) { innerPadding ->
-        HomeScreen(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(horizontal = 16.dp),
-            paddingValues = innerPadding,
-            onEvent = onEvent,
-            state = state
-        )
+        Box(
+            modifier = Modifier.fillMaxSize()
+        ) {
+            HomeScreen(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(horizontal = 16.dp)
+                    .padding(bottom = 50.dp),
+                paddingValues = innerPadding,
+                onEvent = onEvent,
+                state = state
+            )
+            Box(modifier = Modifier
+                .fillMaxWidth()
+                .size(250.dp)
+                .align(Alignment.BottomCenter)
+                .background(
+                    brush = Brush.verticalGradient(
+                        colors = listOf(
+                            Color.Transparent,
+                            MaterialTheme.colorScheme.background
+                        )
+                    )
+                )
+            )
+        }
     }
 }
 
