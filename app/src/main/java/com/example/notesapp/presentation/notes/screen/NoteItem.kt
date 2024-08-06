@@ -96,7 +96,7 @@ fun NoteItem(
                 Spacer(modifier = Modifier.width(7.dp))
 
                 Text(
-                    text = state.notes[index].dateAdded.toString(),
+                    text = state.notes[index].dateAdded,
                     color = MaterialTheme.colorScheme.onBackground,
                     style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Medium)
                 )
