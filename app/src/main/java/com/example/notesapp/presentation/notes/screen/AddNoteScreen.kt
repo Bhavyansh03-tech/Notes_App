@@ -89,6 +89,7 @@ fun AddNotes(
             },
             textStyle = TextStyle(
                 color = MaterialTheme.colorScheme.onBackground,
+                fontStyle = MaterialTheme.typography.headlineMedium.fontStyle,
                 fontSize = MaterialTheme.typography.headlineMedium.fontSize,
                 fontWeight = FontWeight.SemiBold
             ),
@@ -123,6 +124,7 @@ fun AddNotes(
             },
             textStyle = TextStyle(
                 color = MaterialTheme.colorScheme.onBackground,
+                fontStyle = MaterialTheme.typography.headlineMedium.fontStyle,
                 fontSize = MaterialTheme.typography.bodyLarge.fontSize,
                 fontWeight = FontWeight.Medium
             ),
